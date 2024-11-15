@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>Thông</p>
+    <p>Đây là trang chủ</p>
+
+  <a href="/getAllUser">Get All User</a>
+
+
+    <hr>
+    <%if(message){%>
+      <h1><%=message%></h1>
+    <%}%>
+  <form action="/createUser" method="POST" enctype="application/x-www-form-urlencoded">
+    <div style="display:flex; flex-direction: column;flex:auto;gap: 10px">
+      <label for="maXe">Mã xe:</label>
+    <input type="text" name="maXe" placeholder="Mã xe">
+        <input type="text" name="name" placeholder="Tên xe">
+    <input type="text" name="age" placeholder="age">
+    <button type="submit">Add User</button>
+    </div>
+    </form>
+  </body>
+</html>

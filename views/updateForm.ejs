@@ -1,0 +1,20 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Update User: <%=data.name%></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<a href="/getAllUser">Back</a>
+    <h1>Update User: <%=data.name%></h1>
+    <form action="/updateUser" method="POST" enctype="application/x-www-form-urlencoded">
+        <div style="display:flex; flex-direction: column;flex:auto;gap: 10px">
+        <input type="text" name="name" placeholder="name" value="<%=data.name%>">
+            <input type="text" name="address" placeholder="address" value="<%=data.address%>">
+        <input type="text" name="age" placeholder="age" value="<%=data.age%>">
+        <input type="hidden" name="id" value="<%=data.id%>">
+        <button type="submit">Update User</button>
+        </div>
+    </form>
+</body>
+</html>
