@@ -86,7 +86,7 @@ router.get('/getAllUser', function(req, res) {
   //   }
   // ]
   STUDENT.find({}).then(jsonData=>{
-    res.render('users',{name:'Buoi',data:jsonData})
+    res.render('users',{name:'Đã thêm vào sever của thông',data:jsonData})
   })
 });
 router.post('/createUser',function (req,res) {
