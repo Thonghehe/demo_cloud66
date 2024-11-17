@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nguyen Kim Thong</title>
     <link rel='stylesheet' href='/stylesheets/stylepr.css' />
 </head>
 
 <body>
 <div>
-    <h1>My Introduce</h1>
-    <h2>I'm Thong</h2>
+    <h1>I'm Thong</h1>
     <p>My life is full of troubles, so how can I dream of being lucky enough to be complete with you?</p>
-    <br>
-    <p>Bạn đã mất công vào đây rồi sao không nhắn cho tôi 1 câu để message nó teng teng nhể</p>
+    <p>Độc thân, tính thì không biết cậu có thấy vui không?</p>
+    <p>Cậu đã mất công vào đây rồi sao không nhắn cho tôi 1 câu để message nó teng teng nhể?</p>
+    <a href="https://m.me/thongahihi?hash=AbY7yaLiRGMS4qo8&source=qr_link_share">Bấm đây nhé!</a>
     <img src="" alt="">
 </div>
 
@@ -52,9 +52,18 @@
             });
             thumbnailsContainer.appendChild(img);
         });
-
-        // Set the initial large image
         largeImage.src = images.image1;
+
+        // Automatically change the large image every 3 seconds
+        let currentIndex = 0;
+        const imageArray = Object.values(images);
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % imageArray.length;
+            largeImage.src = imageArray[currentIndex];
+        }, 1500);
+        // Set the initial large image
+        // largeImage.src = images.image1;
     </script>
 </body>
 
