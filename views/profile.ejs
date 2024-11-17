@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href='/stylesheets/stylepr.css' />
+</head>
+
+<body>
+<div>
+    <h1>My Introduce</h1>
+    <h2>Tôi tên là thông</h2>
+    <p>Đố kiếm ai đẹp trai hơn tôi</p>
+    <img src="" alt="">
+</div>
+
+<div class="thumbnail-container">
+    <img id="large-image" src="" alt="Large Image">
+    <div class="thumbnails" style="margin-bottom:100px ;"></div>
+    <div class="tree">
+        <div class="tree-trunk"></div>
+    </div>
+</div>
+    <script>
+        const images = {
+            image1: './images/image.jpg',
+            // image2: './images/image1.png',
+            // image3: './images/image3.png',
+            // image4: './images/image4.png',
+            // image5: './images/image5.png',
+            // image6: './images/image6.png',
+            // image7: './images/image7.png',
+            // image8: './images/image8.png',
+            // image9: './images/image9.png',
+            // image10: './images/image10.png',
+        };
+
+        const largeImage = document.getElementById('large-image');
+        const thumbnailsContainer = document.querySelector('.thumbnails');
+
+        Object.values(images).forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Thumbnail';
+            img.classList.add('thumbnail');
+            img.addEventListener('mouseover', () => {
+                largeImage.src = src;
+            });
+            thumbnailsContainer.appendChild(img);
+        });
+
+        // Set the initial large image
+        largeImage.src = images.image1;
+    </script>
+</body>
+
+</html>

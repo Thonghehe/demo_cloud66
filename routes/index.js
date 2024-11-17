@@ -108,4 +108,7 @@ router.post('/createUser',function (req,res) {
     res.redirect('/getAllUser');
   }).catch(err=>console.log(err));
 })
+router.get('/profile',function (req,res) {
+  res.render('profile');
+})
 module.exports = router;
