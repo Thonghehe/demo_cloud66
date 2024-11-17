@@ -55,15 +55,9 @@
         largeImage.src = images.image1;
 
         // Automatically change the large image every 3 seconds
-        let currentIndex = 0;
-        const imageArray = Object.values(images);
 
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % imageArray.length;
-            largeImage.src = imageArray[currentIndex];
-        }, 1500);
         // Set the initial large image
-        // largeImage.src = images.image1;
+        largeImage.src = images.image1;
     </script>
 </body>
 
