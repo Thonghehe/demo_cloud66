@@ -216,3 +216,12 @@ p {
         font-size: 14px;
     }
 }
+a {
+    color: #00B7FF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0095cc;
+}
