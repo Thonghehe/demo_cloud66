@@ -105,8 +105,18 @@ router.post('/createUser',function (req,res) {
     age: age,
   })
   student.save().then(result=>{
-    res.redirect('/getAllUser');
-  }).catch(err=>console.log(err));
+    const ketqua = {
+      errorCode:200,
+      message:"Create car successfully"
+    }
+    res.send(ketqua);
+  }).catch(err=>{
+    const ketqua = {
+      errorCode: 500,
+      message: "Create car failed"
+    }
+    res.send(ketqua);
+  });
 })
 router.get('/profile',function (req,res) {
   res.render('profile');
