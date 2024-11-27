@@ -22,8 +22,8 @@ const STUDENT = mongoose.model('student',stdentSchema);
 //lazy load: load dữ liệu từ server về từng phaanf
 router.get('/getDatabase',function (req,res) {
     //Lấy dữ liệu từ collection student
-  const page =req.query.page||1//số trang tính từ 1
-  const limit = req.query.limit||10//số phần tử cần lấy trên 1 lần request
+  const page =parseInt(req.query.page)||1//số trang tính từ 1
+  const limit = parseInt(req.query.limit)||10//số phần tử cần lấy trên 1 lần request
   //tính toán ra số phần tử muốn bỏ qua
   const skip = (page-1)*limit;
     STUDENT.find({}).skip(skip).limit(limit).then(result=>{
