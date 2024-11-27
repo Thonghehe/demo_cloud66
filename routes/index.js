@@ -18,10 +18,15 @@ const stdentSchema = new mongoose.Schema({
 })
 //Model: là khái niệm để thao tác với collection tên là student
 const STUDENT = mongoose.model('student',stdentSchema);
-
+//zazy load trên ExpressJS và áp dụng trên Android
+//lazy load: load dữ liệu từ server về từng phaanf
 router.get('/getDatabase',function (req,res) {
     //Lấy dữ liệu từ collection student
-    STUDENT.find({}).then(result=>{
+  const page =req.query.page||1//số trang tính từ 1
+  const limit = req.query.limit||10//số phần tử cần lấy trên 1 lần request
+  //tính toán ra số phần tử muốn bỏ qua
+  const skip = (page-1)*limit;
+    STUDENT.find({}).skip(skip).limit(limit).then(result=>{
         res.send(result);
     }).catch(err=>console.log(err));
 })
